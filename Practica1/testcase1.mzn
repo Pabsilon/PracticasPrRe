@@ -1,8 +1,6 @@
-var int: x;
-var int: y;
+var int:x;
+var int:y;
 
-constraint x<10;
-constraint x-5;
 constraint x>5;
 constraint x<2*y;
 
