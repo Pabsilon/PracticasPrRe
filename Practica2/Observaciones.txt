@@ -1,0 +1,40 @@
+Programación con restricciones - práctica 2
+
+#Nombre1: Pablo Mac-Veigh
+
+#Observaciones:
+
+#P1 Modelo:
+
+
+var bool:a;
+var bool:b;
+var bool:c;
+var bool:d;
+var bool:e;
+var bool:f;
+var bool:g;
+var bool:h;
+
+constraint a!=b /\ b!=c /\ c!=d /\ d!=a;
+constraint e!=f /\ f!=g /\ g!=h /\ h!=e;
+constraint a!=e /\ b!=f /\ g!=c /\ d!=h;
+
+solve satisfy;
+
+
+#P2 constraint completa:
+
+constraint ((x<y)/\(y<z)/\(m=z))\/((x<y)/\not(y<z)/\(m=y))\/(not(x<y)/\(y<z)/\(m=z))\/((not(x<y)/\not(y<z)/\(m=x)));
+
+
+#P3.1 ¿Hay soluciones?(S/N): 
+No hay soluciones, es insatisfactible.
+
+#P3.2 Explicación (una frase):
+El problema iguala m a la variable de mayor valor entre
+(x,y,z), al decirle que m tiene que ser distinto de estos valores, no hay soluciones validas.
+
+#P4 Restricción adicional: 
+
+constraint ((a>0)/\(a=x)/\(b=y)/\(u=m)/\(z=100)) \/ (not(a>0)/\(a*a=x)/\(b=y)/\(z=y*y)/\(u=m+1));
