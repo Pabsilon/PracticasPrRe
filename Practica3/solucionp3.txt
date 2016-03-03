@@ -1,0 +1,60 @@
+Programación con restricciones - práctica 3
+
+#Nombre1: Pablo Mac-Veigh
+
+#Observaciones: La solucion al apartado 10 maximiza el numero de horas por día, haciendo que se minimize el numero de días necesarios
+para terminar la tarea. No es una solución elegante pero encuentra la solución con bastante tiempo. Al utlizar la llamada con -a se ven
+soluciones posibles.
+
+#P1 Declaración del array t:
+
+array [1..n,1..d] of var 1..maxh: t;
+
+
+#P2 Declaración del array horasPersona:	
+
+array [1..n] of var 0..d*maxh: horasPersona;
+
+
+#P3 Restricción:
+
+constraint forall (i in 1..n) (horasPersona[i]=sum([t[i,j]|j in 1..d]));
+
+
+#P4 Declaración del array horasDia:	
+
+array [1..d] of var 0..maxh*n: horasDia;
+
+
+#P5 Restricción:
+
+constraint forall (i in 1..d) (horasDia[i]=sum([ t[j,i] | j in 1..n ]));
+
+#P6 Restricción:
+
+constraint forall (i in 1..n) (exists (j in 1..d) (t[i,j]=0) );
+
+
+#P7 Restricción:
+
+constraint forall (i in 1..n) (horasPersona[i]>=maxh*(d-3));
+
+
+#P8 Restricción:
+
+constraint forall (i in 1..n) (not(exists (j in 1..d-1) ((t[i,j]=maxh)/\(t[i,(j+1)]<maxh))));
+
+
+#P9 Restricción:
+
+constraint sum([horasPersona[i]| i in 1..n ])>=tiempoProyecto;
+
+#P10 a) Declaración de variable nueva (si la hay): 
+#P10 b) Restricción nueva (si la hay): 
+#P10 c) Nuevo objetivo solve (si hay cambiado): 
+
+solve maximize sum([horasDia[i]|i in 1..d]);
+
+
+
+

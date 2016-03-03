@@ -6,3 +6,6 @@ Year 2015-2016
 
 #Practica1
 Getting familiar with MiniZinc, two small examples.
+
+#Practica2
+Flying solo
