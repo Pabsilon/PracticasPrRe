@@ -9,3 +9,9 @@ Getting familiar with MiniZinc, two small examples.
 
 #Practica2
 Flying solo
+
+#Practica3
+Solving company shifts.
+
+#Practica4
+Travel agency itinerary: Shorter/Cheaper.

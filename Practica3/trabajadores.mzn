@@ -18,10 +18,10 @@ constraint forall (i in 1..n) (exists (j in 1..d) (t[i,j]=0) );
 
 constraint forall (i in 1..n) (horasPersona[i]>=maxh*(d-3));
 
-constraint forall (i in 1..n) (not(exists (j in 1..d-1) ((t[i,j]=maxh)/\(t[i,(j+1)]<maxh))));
+constraint forall (i in 1..n) (not(exists (j in 1..d-1) ((t[i,j]=maxh)/\(t[i,(j+1)]=maxh))));
 
 constraint sum([horasPersona[i]| i in 1..n ])>=tiempoProyecto;
 
-%solve satisfy;
+solve satisfy;
 
-solve maximize sum([horasDia[i]|i in 1..d]);
+%solve maximize sum([horasDia[i]|i in 1..d]);
