@@ -1,5 +1,5 @@
 %%%%%%%%%%%%% Práctica 4 %%%%%%%%%%%%%%%%
-%Pablo Mac-Veigh, 50766233
+%Pablo Mac-Veigh, 50766233N
 
 int: n;
 int: ini;
@@ -31,4 +31,4 @@ constraint coste = sum (i in 1..max-1) (costes[i]);
 %solve minimize posfin;
 
 %%Solución para trayecto mas barato
-solve maximize coste;
+solve minimize coste;
