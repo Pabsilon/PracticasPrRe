@@ -1,0 +1,10 @@
+n=5;
+m=5;
+nb = n div 2+1;
+mb = m div 2+1;
+
+% bloques de negros para las filas y columnas ocupadas
+
+
+f = [|3,0,0 | 4,0,0 |1,1,0 |2,0,0 |2,0,0 |];
+c = [|3,0,0 | 2,0,0 |2,0,0 |1,2,0 |3,0,0 |];
